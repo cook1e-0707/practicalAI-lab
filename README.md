@@ -12,29 +12,21 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 
 | Lab | Topics |
 |---|---|
-| **Day 1** | Python basics, NumPy, pandas, and one-/two-input linear regression |
-| **Day 2** | Lemonade sales, training/validation/test data, MAE, and linear regression |
+| **Day 1** | Python basics, NumPy, pandas, data splitting, and one-/two-input linear regression |
 
 ## Recommended: open a notebook directly in Colab
 
-### Day 1
-
 [![Open Day 1 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day1/student/week1_day1_yourname.ipynb)
 
-### Day 2
-
-[![Open Day 2 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day2/student/week1_day2_yourname.ipynb)
-
-1. Click the Colab button for the correct day.
+1. Click the Colab button.
 2. Sign in to your Google account if asked.
 3. In Colab, select **File → Save a copy in Drive**.
 4. Replace `yourname` in the filename with your own name.
 
-Examples:
+Example:
 
 ```text
 week1_day1_alex.ipynb
-week1_day2_alex.ipynb
 ```
 
 Work only in your saved copy. Changes made to the notebook opened directly from
@@ -54,11 +46,10 @@ Use this method if the direct Colab button does not work.
    ```
 
 5. Select the `main` branch if Colab asks for a branch.
-6. Open the notebook for the correct day:
+6. Open the student notebook:
 
    ```text
    day1/student/week1_day1_yourname.ipynb
-   day2/student/week1_day2_yourname.ipynb
    ```
 
 7. Select **File → Save a copy in Drive**.
@@ -81,21 +72,16 @@ Use this method if you want to download the course files to your computer first.
    practicalAI-lab-main/
    ├── day1/
    │   ├── data/
-   │   │   └── moon_crystal_sales.csv
+   │   │   └── simple_lemonade_sales.csv
    │   └── student/
    │       └── week1_day1_yourname.ipynb
-   └── day2/
-       ├── data/
-       │   └── lemonade_sales.csv
-       └── student/
-           └── week1_day2_yourname.ipynb
    ```
 
 ### Upload the notebook to Colab
 
 1. Open [Google Colab](https://colab.research.google.com/).
 2. Select **File → Upload notebook**.
-3. Select the Day 1 or Day 2 notebook from the folder you downloaded.
+3. Select `week1_day1_yourname.ipynb` from the folder you downloaded.
 4. After it opens, select **File → Save a copy in Drive**.
 5. Replace `yourname` in the filename with your own name.
 
@@ -125,20 +111,14 @@ created by earlier cells.
 
 ## Data files
 
-Day 1 uses a small fictional sales table from a crystal shop on the Moon:
+Day 1 uses a simple fictional lemonade-sales table with 30 rows:
 
 ```text
-day1/data/moon_crystal_sales.csv
+day1/data/simple_lemonade_sales.csv
 ```
 
-Day 2 uses fictional lemonade-sales data:
-
-```text
-day2/data/lemonade_sales.csv
-```
-
-The notebooks download their CSV files from GitHub automatically. You do not
-need to upload the CSV files separately when you have an internet connection.
+Each notebook includes the GitHub raw-data URL. You can use that URL when you
+have an internet connection, or upload the CSV and enter its filename instead.
 
 ## Common problems
 
@@ -157,15 +137,9 @@ need to upload the CSV files separately when you have an internet connection.
 day1/
 ├── data/
 │   ├── README.md
-│   └── moon_crystal_sales.csv
+│   └── simple_lemonade_sales.csv
 └── student/
     └── week1_day1_yourname.ipynb
-day2/
-├── data/
-│   ├── README.md
-│   └── lemonade_sales.csv
-└── student/
-    └── week1_day2_yourname.ipynb
 ```
 
 ## Official help
