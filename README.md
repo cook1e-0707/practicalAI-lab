@@ -72,7 +72,7 @@ Use this method if you want to download the course files to your computer first.
    practicalAI-lab-main/
    ├── day1/
    │   ├── data/
-   │   │   └── simple_lemonade_sales.csv
+   │   │   └── bluebikes_june_2025.csv
    │   └── student/
    │       └── week1_day1_yourname.ipynb
    ```
@@ -111,14 +111,16 @@ created by earlier cells.
 
 ## Data files
 
-Day 1 uses a simple fictional lemonade-sales table with 30 rows:
+Day 1 uses 30 days of real Cambridge Bluebikes trip counts and Boston
+temperature observations from June 2025:
 
 ```text
-day1/data/simple_lemonade_sales.csv
+day1/data/bluebikes_june_2025.csv
 ```
 
 Each notebook includes the GitHub raw-data URL. You can use that URL when you
 have an internet connection, or upload the CSV and enter its filename instead.
+See `day1/data/README.md` for the Cambridge Open Data and NOAA sources.
 
 ## Common problems
 
@@ -137,7 +139,7 @@ have an internet connection, or upload the CSV and enter its filename instead.
 day1/
 ├── data/
 │   ├── README.md
-│   └── simple_lemonade_sales.csv
+│   └── bluebikes_june_2025.csv
 └── student/
     └── week1_day1_yourname.ipynb
 ```
