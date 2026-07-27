@@ -1,15 +1,14 @@
-# Lemonade Sales data
+# Moon Crystal Sales Data
 
-`lemonade_sales.csv` contains 72 fictional days of lemonade-stand observations.
-It is synthetic and is intended only for teaching.
+`moon_crystal_sales.csv` contains 12 fictional days at a crystal shop on
+the Moon. The data is synthetic and is intended only for teaching.
 
 | Column | Meaning | Type |
 |---|---|---|
-| `temperature_f` | Daily temperature in degrees Fahrenheit | integer |
-| `weekend` | `1` for Saturday/Sunday, otherwise `0` | integer |
-| `rain` | `1` if it rained, otherwise `0` | integer |
-| `cups_sold` | Number of cups sold that day; this is the prediction target | integer |
+| `visitor_shuttles` | Number of visitor shuttles that arrived | integer |
+| `light_shows` | Number of light shows held that day | integer |
+| `crystals_sold` | Number of crystals sold; this is the prediction target | integer |
 
-The data includes random variation, so no model predicts every day perfectly.
-The dataset has no missing values. A fixed split (`random_state=42`) is used in
-the lab so all students can compare results.
+The values contain a simple fictional pattern for students to discover. The
+first model uses only `visitor_shuttles`. The second model uses both
+`visitor_shuttles` and `light_shows`.

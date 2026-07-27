@@ -1,3 +1,4 @@
 # private-only materials and local notebook build tools
-day1/private/
+day*/private/
 tools/
+.DS_Store
