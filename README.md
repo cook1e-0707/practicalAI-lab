@@ -13,10 +13,17 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 | Lab | Topics |
 |---|---|
 | **Day 1** | Python basics, NumPy, pandas, data splitting, and one-/two-input linear regression |
+| **Day 2** | Supervised learning with Linear Regression, Decision Tree, KNN, and a small Neural Network |
 
 ## Recommended: open a notebook directly in Colab
 
+### Day 1
+
 [![Open Day 1 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day1/student/week1_day1_yourname.ipynb)
+
+### Day 2
+
+[![Open Day 2 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day2/student/week1_day2_yourname.ipynb)
 
 1. Click the Colab button.
 2. Sign in to your Google account if asked.
@@ -27,6 +34,7 @@ Example:
 
 ```text
 week1_day1_alex.ipynb
+week1_day2_alex.ipynb
 ```
 
 Work only in your saved copy. Changes made to the notebook opened directly from
@@ -46,10 +54,11 @@ Use this method if the direct Colab button does not work.
    ```
 
 5. Select the `main` branch if Colab asks for a branch.
-6. Open the student notebook:
+6. Open the student notebook for the correct day:
 
    ```text
    day1/student/week1_day1_yourname.ipynb
+   day2/student/week1_day2_yourname.ipynb
    ```
 
 7. Select **File → Save a copy in Drive**.
@@ -75,13 +84,19 @@ Use this method if you want to download the course files to your computer first.
    │   │   └── bluebikes_june_2025.csv
    │   └── student/
    │       └── week1_day1_yourname.ipynb
+   └── day2/
+       ├── data/
+       │   └── lemonade_sales.csv
+       └── student/
+           └── week1_day2_yourname.ipynb
    ```
 
 ### Upload the notebook to Colab
 
 1. Open [Google Colab](https://colab.research.google.com/).
 2. Select **File → Upload notebook**.
-3. Select `week1_day1_yourname.ipynb` from the folder you downloaded.
+3. Select `week1_day1_yourname.ipynb` or
+   `week1_day2_yourname.ipynb` from the folder you downloaded.
 4. After it opens, select **File → Save a copy in Drive**.
 5. Replace `yourname` in the filename with your own name.
 
@@ -122,6 +137,17 @@ Each notebook includes the GitHub raw-data URL. You can use that URL when you
 have an internet connection, or upload the CSV and enter its filename instead.
 See `day1/data/README.md` for the Cambridge Open Data and NOAA sources.
 
+Day 2 uses 72 fictional lemonade-stand days created for teaching:
+
+```text
+day2/data/lemonade_sales.csv
+```
+
+The columns describe temperature, whether it is a weekend, whether it rains,
+and the number of cups sold. The data includes random variation so students can
+compare Linear Regression, Decision Tree, KNN, and Neural Network predictions.
+See `day2/data/README.md` for the column descriptions and teaching-data note.
+
 ## Common problems
 
 | Problem | What to do |
@@ -142,6 +168,13 @@ day1/
 │   └── bluebikes_june_2025.csv
 └── student/
     └── week1_day1_yourname.ipynb
+
+day2/
+├── data/
+│   ├── README.md
+│   └── lemonade_sales.csv
+└── student/
+    └── week1_day2_yourname.ipynb
 ```
 
 ## Official help
