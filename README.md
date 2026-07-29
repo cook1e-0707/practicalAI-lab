@@ -14,6 +14,7 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 |---|---|
 | **Day 1** | Python basics, NumPy, pandas, data splitting, and one-/two-input linear regression |
 | **Day 2** | Supervised learning with Linear Regression, Decision Tree, KNN, and a small Neural Network |
+| **Day 3** | Unsupervised learning with K-Means, Bisecting K-Means, images, and audio |
 
 ## Recommended: open a notebook directly in Colab
 
@@ -25,6 +26,10 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 
 [![Open Day 2 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day2/student/week1_day2_yourname.ipynb)
 
+### Day 3
+
+[![Open Day 3 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day3/student/week1_day3_yourname.ipynb)
+
 1. Click the Colab button.
 2. Sign in to your Google account if asked.
 3. In Colab, select **File → Save a copy in Drive**.
@@ -35,6 +40,7 @@ Example:
 ```text
 week1_day1_alex.ipynb
 week1_day2_alex.ipynb
+week1_day3_alex.ipynb
 ```
 
 Work only in your saved copy. Changes made to the notebook opened directly from
@@ -59,6 +65,7 @@ Use this method if the direct Colab button does not work.
    ```text
    day1/student/week1_day1_yourname.ipynb
    day2/student/week1_day2_yourname.ipynb
+   day3/student/week1_day3_yourname.ipynb
    ```
 
 7. Select **File → Save a copy in Drive**.
@@ -84,19 +91,23 @@ Use this method if you want to download the course files to your computer first.
    │   │   └── bluebikes_june_2025.csv
    │   └── student/
    │       └── week1_day1_yourname.ipynb
-   └── day2/
-       ├── data/
-       │   └── lemonade_sales.csv
+   ├── day2/
+   │   ├── data/
+   │   │   └── lemonade_sales.csv
+   │   └── student/
+   │       └── week1_day2_yourname.ipynb
+   └── day3/
        └── student/
-           └── week1_day2_yourname.ipynb
+           └── week1_day3_yourname.ipynb
    ```
 
 ### Upload the notebook to Colab
 
 1. Open [Google Colab](https://colab.research.google.com/).
 2. Select **File → Upload notebook**.
-3. Select `week1_day1_yourname.ipynb` or
-   `week1_day2_yourname.ipynb` from the folder you downloaded.
+3. Select `week1_day1_yourname.ipynb`,
+   `week1_day2_yourname.ipynb`, or
+   `week1_day3_yourname.ipynb` from the folder you downloaded.
 4. After it opens, select **File → Save a copy in Drive**.
 5. Replace `yourname` in the filename with your own name.
 
@@ -148,6 +159,21 @@ and the number of cups sold. The data includes random variation so students can
 compare Linear Regression, Decision Tree, KNN, and Neural Network predictions.
 See `day2/data/README.md` for the column descriptions and teaching-data note.
 
+Day 3 uses several kinds of data so students can see clustering in different
+forms:
+
+- coordinate datasets generated inside the notebook;
+- the handwritten-digits dataset and a sample flower image included with
+  scikit-learn;
+- the public Free Spoken Digit Dataset, which the notebook downloads when the
+  audio case is first run.
+
+The Day 3 notebook needs an internet connection for the spoken-digit download.
+In hosted Colab, students may allow microphone access to record their own voice
+or use the provided dataset fallback. Record only yourself. Colab files stored
+under `/content/` are temporary and disappear when the runtime is deleted or
+reset unless you intentionally save them elsewhere.
+
 ## Common problems
 
 | Problem | What to do |
@@ -156,6 +182,8 @@ See `day2/data/README.md` for the column descriptions and teaching-data note.
 | My changes were not saved. | Open the copy in Google Drive and check that your name is in the filename. |
 | Python says a variable is not defined. | Run the completed cells above it again, starting from the top. |
 | The CSV file does not load. | Check your internet connection, then run the data-loading cell again. |
+| The Day 3 audio data does not load. | Check the internet connection and rerun the audio setup cell. The first run may take longer because it installs or downloads files. |
+| Colab cannot use my microphone. | Allow microphone access when asked, or continue with the dataset recording used as a fallback. |
 | I see `None` in the output. | Return to the `TODO` lines in that task and complete them. |
 | Colab disconnected. | Reconnect, then rerun your completed cells from the top. |
 
@@ -175,6 +203,10 @@ day2/
 │   └── lemonade_sales.csv
 └── student/
     └── week1_day2_yourname.ipynb
+
+day3/
+└── student/
+    └── week1_day3_yourname.ipynb
 ```
 
 ## Official help
@@ -190,4 +222,5 @@ day2/
 - [NumPy Learn](https://numpy.org/learn/) — beginner tutorials for arrays and numerical calculations
 - [pandas Getting Started](https://pandas.pydata.org/getting_started.html) — beginner guides for tables, columns, and data analysis
 - [scikit-learn Getting Started](https://scikit-learn.org/stable/getting_started.html) — machine-learning tools for training, prediction, data splitting, and model evaluation
+- [librosa Documentation](https://librosa.org/doc/latest/) — tools for loading audio and creating sound features
 - [PyTorch: Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) — tensors, datasets, models, and training for later lessons
