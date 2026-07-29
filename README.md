@@ -14,7 +14,7 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 |---|---|
 | **Day 1** | Python basics, NumPy, pandas, data splitting, and one-/two-input linear regression |
 | **Day 2** | Supervised learning with Linear Regression, Decision Tree, KNN, and a small Neural Network |
-| **Day 3** | Unsupervised learning with K-Means, Bisecting K-Means, images, and audio |
+| **Day 3** | Unsupervised learning with K-Means and Recursive K-Means |
 
 ## Recommended: open a notebook directly in Colab
 
