@@ -1,6 +1,5 @@
-# private-only materials and local notebook build tools
-day*/private/
-**/*private*.ipynb
+# Private teaching materials and local notebook build tools
+day*/solution/
 tools/
 day4/assets/day4_food_pipeline.png
 .DS_Store
