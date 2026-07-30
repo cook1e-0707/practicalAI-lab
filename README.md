@@ -15,6 +15,7 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 | **Day 1** | Python basics, NumPy, pandas, data splitting, and one-/two-input linear regression |
 | **Day 2** | Supervised learning with Linear Regression, Decision Tree, KNN, and a small Neural Network |
 | **Day 3** | Unsupervised learning with K-Means and Recursive K-Means |
+| **Day 4** | A focused TinyGPT demo: tokenizer, tokenization, next-token training, and text generation |
 
 ## Recommended: open a notebook directly in Colab
 
@@ -30,6 +31,10 @@ You do not need to install Python, Git, or any Python libraries. You only need:
 
 [![Open Day 3 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day3/student/week1_day3_yourname.ipynb)
 
+### Day 4
+
+[![Open Day 4 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cook1e-0707/practicalAI-lab/blob/main/day4/student/week1_day4_yourname.ipynb)
+
 1. Click the Colab button.
 2. Sign in to your Google account if asked.
 3. In Colab, select **File → Save a copy in Drive**.
@@ -41,6 +46,7 @@ Example:
 week1_day1_alex.ipynb
 week1_day2_alex.ipynb
 week1_day3_alex.ipynb
+week1_day4_alex.ipynb
 ```
 
 Work only in your saved copy. Changes made to the notebook opened directly from
@@ -66,6 +72,7 @@ Use this method if the direct Colab button does not work.
    day1/student/week1_day1_yourname.ipynb
    day2/student/week1_day2_yourname.ipynb
    day3/student/week1_day3_yourname.ipynb
+   day4/student/week1_day4_yourname.ipynb
    ```
 
 7. Select **File → Save a copy in Drive**.
@@ -96,18 +103,31 @@ Use this method if you want to download the course files to your computer first.
    │   │   └── lemonade_sales.csv
    │   └── student/
    │       └── week1_day2_yourname.ipynb
-   └── day3/
+   ├── day3/
+   │   └── student/
+   │       └── week1_day3_yourname.ipynb
+   └── day4/
+       ├── data/
+       │   ├── food_knowledge_corpus.txt
+       │   └── verified_food_knowledge.csv
+       ├── model/
+       │   └── day4_tinygpt_checkpoint.pt
        └── student/
-           └── week1_day3_yourname.ipynb
+           └── week1_day4_yourname.ipynb
    ```
 
 ### Upload the notebook to Colab
 
 1. Open [Google Colab](https://colab.research.google.com/).
 2. Select **File → Upload notebook**.
-3. Select `week1_day1_yourname.ipynb`,
-   `week1_day2_yourname.ipynb`, or
-   `week1_day3_yourname.ipynb` from the folder you downloaded.
+3. Select the notebook for the correct day:
+
+   ```text
+   week1_day1_yourname.ipynb
+   week1_day2_yourname.ipynb
+   week1_day3_yourname.ipynb
+   week1_day4_yourname.ipynb
+   ```
 4. After it opens, select **File → Save a copy in Drive**.
 5. Replace `yourname` in the filename with your own name.
 
@@ -174,6 +194,51 @@ or use the provided dataset fallback. Record only yourself. Colab files stored
 under `/content/` are temporary and disappear when the runtime is deleted or
 reset unless you intentionally save them elsewhere.
 
+Day 4 starts from 26 food-knowledge records supported by official FDA,
+USDA/FSIS, USDA MyPlate, and NIH ODS sources:
+
+```text
+day4/data/verified_food_knowledge.csv
+```
+
+The generated training corpus repeats those verified records in deterministic
+shuffled orders:
+
+```text
+day4/data/food_knowledge_corpus.txt
+```
+
+The notebook trains an approximately 0.43-million-parameter character-level
+decoder-only
+Transformer for a short time, then loads a checkpoint trained for 4,000 steps:
+
+```text
+day4/model/day4_tinygpt_checkpoint.pt
+```
+
+The notebook follows one focused path: text, character and BPE tokenization,
+token IDs, shifted next-token pairs, TinyGPT training, loss, parameter updates,
+and generated text. Generated food text is not guaranteed factual. Training and
+generation use separate Markdown pipeline diagrams in their corresponding
+sections, so Colab does not need to download a separate image.
+Day 4 automatically uses a CUDA GPU when available and otherwise follows a
+shorter CPU path. The notebook checks required packages and uses pip to install
+only missing ones.
+
+For local testing, open the repository as the working folder and run the Day 4
+notebook from top to bottom. Its loaders first search these repository files:
+
+```text
+day4/data/food_knowledge_corpus.txt
+day4/model/day4_tinygpt_checkpoint.pt
+```
+
+The output should begin with `local file:` for each of these two resources.
+When no local file is found, the same cells use the GitHub raw-data URL, which
+is the normal path in Colab. The training and generation diagrams are stored
+directly in notebook Markdown, while tokenization and loss figures are produced
+by notebook code. No separate pipeline image is required.
+
 ## Common problems
 
 | Problem | What to do |
@@ -184,6 +249,9 @@ reset unless you intentionally save them elsewhere.
 | The CSV file does not load. | Check your internet connection, then run the data-loading cell again. |
 | The Day 3 audio data does not load. | Check the internet connection and rerun the audio setup cell. The first run may take longer because it installs or downloads files. |
 | Colab cannot use my microphone. | Allow microphone access when asked, or continue with the dataset recording used as a fallback. |
+| Day 4 says the selected device is CPU. | Continue normally. The notebook automatically uses a shorter live-training run and still loads the prepared checkpoint. |
+| Day 4 cannot download the text corpus. | Download `day4/data/food_knowledge_corpus.txt`, rerun the data cell, and select the file when the upload button appears. |
+| Day 4 cannot load the prepared checkpoint. | Continue with the short live-trained model. Its text may be less clear, but the tokenizer, training, and generation pipeline still works. |
 | I see `None` in the output. | Return to the `TODO` lines in that task and complete them. |
 | Colab disconnected. | Reconnect, then rerun your completed cells from the top. |
 
@@ -207,6 +275,16 @@ day2/
 day3/
 └── student/
     └── week1_day3_yourname.ipynb
+
+day4/
+├── data/
+│   ├── README.md
+│   ├── food_knowledge_corpus.txt
+│   └── verified_food_knowledge.csv
+├── model/
+│   └── day4_tinygpt_checkpoint.pt
+└── student/
+    └── week1_day4_yourname.ipynb
 ```
 
 ## Official help
@@ -224,3 +302,4 @@ day3/
 - [scikit-learn Getting Started](https://scikit-learn.org/stable/getting_started.html) — machine-learning tools for training, prediction, data splitting, and model evaluation
 - [librosa Documentation](https://librosa.org/doc/latest/) — tools for loading audio and creating sound features
 - [PyTorch: Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) — tensors, datasets, models, and training for later lessons
+- [tiktoken](https://github.com/openai/tiktoken) — byte-pair encoding and subword tokenization
